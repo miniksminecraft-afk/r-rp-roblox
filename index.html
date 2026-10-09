@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R-RP | Официальный портал CRMP Roblox</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Фоновые неоновые свечения -->
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
+
+    <!-- Навигационная шапка -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">⚡</span> R-<span>RP</span>
+        </div>
+        
+        <nav class="nav">
+            <button class="nav-tab active" data-tab="home">Главная</button>
+            <button class="nav-tab" data-tab="forum">Форум</button>
+            <button class="nav-tab nav-tab-donate" data-tab="donate">💎 Донат</button>
+            <button class="nav-tab" data-tab="features">Особенности</button>
+            <button id="adminNavTab" class="nav-tab nav-tab-admin hidden" data-tab="admin">⚙️ Админка</button>
+        </nav>
+        
+        <!-- Профиль и Баланс -->
+        <div class="user-block">
+            <button id="openAuthBtn" class="btn-auth"><span>Войти</span></button>
+            <div id="userProfile" class="user-profile hidden">
+                <div class="user-balance-pill">
+                    <span class="coin-icon">💰</span> 
+                    <span id="headerBalance">0</span> ₽
+                </div>
+                <span id="userBadge" class="badge-role">Игрок</span>
+                <span id="userName">Danik</span>
+                <button id="logoutBtn" class="btn-logout" title="Выйти">✕</button>
+            </div>
+            <a href="https://t.me/radmirrproblix" target="_blank" class="btn-nav-tg">Telegram</a>
+        </div>
+    </header>
+
+    <!-- 1. ГЛАВНАЯ СТРАНИЦА -->
+    <div id="page-home" class="tab-page active">
+        <section class="hero-redesign">
+            <div class="hero-content">
+                <div class="status-pill">
+                    <span class="pulse-dot"></span> Официальное открытие — 23 Октября 2026
+                </div>
+                <h1 class="hero-title">ТВОЯ ИСТОРИЯ В <br><span class="gradient-text">CRMP ROBLOX</span></h1>
+                <p class="hero-description">Погрузись в атмосферу криминальной России: от уютных улиц Лыткарино до высоток Арзамаса. Покупай дома, заводи бизнес, собирай автопарк и управляй городом!</p>
+
+                <div class="hero-actions">
+                    <a href="https://t.me/radmirrproblix" target="_blank" class="btn-hero-main">
+                        <span>📱 Наш Telegram Канал</span>
+                    </a>
+                    <button class="btn-hero-sub" onclick="switchPage('donate')">
+                        <span>💎 Донат Магазин</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Статистика и Таймер -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card highlight">
+                    <h3>⏳ ДО СТАРТА ПРОЕКТА</h3>
+                    <div class="countdown-mini">
+                        <div class="time-unit"><span id="days">00</span><p>дней</p></div>
+                        <span class="dots">:</span>
+                        <div class="time-unit"><span id="hours">00</span><p>часов</p></div>
+                        <span class="dots">:</span>
+                        <div class="time-unit"><span id="minutes">00</span><p>минут</p></div>
+                        <span class="dots">:</span>
+                        <div class="time-unit"><span id="seconds">00</span><p>секунд</p></div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="card-icon">🗺️</div>
+                    <h3>КАРТА СЕРВЕРА</h3>
+                    <p class="stat-val">Арзамас & Лыткарино</p>
+                </div>
+                <div class="stat-card">
+                    <div class="card-icon">💳</div>
+                    <h3>ЭКОНОМИКА</h3>
+                    <p class="stat-val">Medium RP / R-BANK</p>
+                </div>
+                <div class="stat-card">
+                    <div class="card-icon">👥</div>
+                    <h3>СЛОТЫ</h3>
+                    <p class="stat-val">1000 Игроков</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Новости -->
+        <section class="news-section">
+            <div class="section-header">
+                <h2>📰 Дневник Разработки R-RP</h2>
+                <p>Все свежие обновления и новости проекта</p>
+            </div>
+
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-header-line">
+                        <span class="news-tag dev">Разработка</span>
+                        <span class="news-date">09 Октября 2026</span>
+                    </div>
+                    <h3>Завершена сборка Дорожной Сети и Домов</h3>
+                    <p>Дороги, парковочные зоны и покупка недвижимости от 40 000 ₽ полностью интегрированы в серверный код!</p>
+                </div>
+                <div class="news-card">
+                    <div class="news-header-line">
+                        <span class="news-tag sys">Системы</span>
+                        <span class="news-date">08 Октября 2026</span>
+                    </div>
+                    <h3>Интерактивные Банкоматы R-BANK</h3>
+                    <p>Готова банковская система с удобным GUI, проверкой баланса и безопасными транзакциями на сервере.</p>
+                </div>
+                <div class="news-card">
+                    <div class="news-header-line">
+                        <span class="news-tag job">Работы</span>
+                        <span class="news-date">07 Октября 2026</span>
+                    </div>
+                    <h3>Первая работа — Уборщик улиц</h3>
+                    <p>Начальная работа для новичков с системой трудоустройства и заработком первых денег на улицах города.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 2. СТРАНИЦА ФОРУМА -->
+    <div id="page-forum" class="tab-page">
+        <section class="forum-section">
+            <div class="forum-header">
+                <div>
+                    <h2>💬 Официальный Форум R-RP</h2>
+                    <p>Общайся с игроками, предлагай идеи и следи за новостями</p>
+                </div>
+                <button id="createTopicBtn" class="btn-primary-glow">+ Создать Тему</button>
+            </div>
+
+            <div class="forum-categories">
+                <button class="forum-cat-btn active" data-cat="Все">Все темы</button>
+                <button class="forum-cat-btn" data-cat="📢 Новости">📢 Новости</button>
+                <button class="forum-cat-btn" data-cat="💬 Общение">💬 Общение</button>
+                <button class="forum-cat-btn" data-cat="🚗 Фракции">🚗 Фракции</button>
+                <button class="forum-cat-btn" data-cat="🛠 Жалобы и Баги">🛠 Жалобы и Баги</button>
+            </div>
+
+            <div id="forumTopicsList" class="topics-list"></div>
+        </section>
+    </div>
+
+    <!-- 3. СТРАНИЦА ДОНАТА (С АНИМИРОВАННЫМИ КНОПКАМИ) -->
+    <div id="page-donate" class="tab-page">
+        <section class="donate-section">
+            <div class="donate-header">
+                <h2>💎 Магазин Донат Услуг (R-COINS)</h2>
+                <p>Покупай эксклюзивный транспорт, статусы и виртуальную валюту для быстрого старта!</p>
+
+                <!-- Баннер баланса -->
+                <div class="donate-balance-card">
+                    <span>Твой личный баланс:</span>
+                    <b id="donatePageBalance">0 ₽</b>
+                    <small>Зачисляется автоматически при регистрации</small>
+                </div>
+            </div>
+
+            <!-- Товары Магазина -->
+            <div class="donate-grid">
+                
+                <div class="donate-card">
+                    <div class="donate-badge vip">VIP Статус</div>
+                    <div class="donate-icon">👑</div>
+                    <h3>Премиум VIP</h3>
+                    <p>Х2 зарплаты на всех работах, доступ к эксклюзивным скинам и командам.</p>
+                    <div class="donate-price">50 000 ₽</div>
+                    <button class="btn-donate" onclick="buyDonateItem(this, 'Премиум VIP', 50000)">Купить</button>
+                </div>
+
+                <div class="donate-card highlight-gold">
+                    <div class="donate-badge car">Автомобиль</div>
+                    <div class="donate-icon">🚘</div>
+                    <h3>Mercedes-Benz G-Class</h3>
+                    <p>Легендарный «Гелик» с настроенным хандлингом и уникальным ник-номером.</p>
+                    <div class="donate-price">250 000 ₽</div>
+                    <button class="btn-donate" onclick="buyDonateItem(this, 'Mercedes-Benz G-Class', 250000)">Купить</button>
+                </div>
+
+                <div class="donate-card">
+                    <div class="donate-badge money">Валюта</div>
+                    <div class="donate-icon">💵</div>
+                    <h3>Пакет «Миллионер»</h3>
+                    <p>Мгновенное пополнение игрового баланса в банке на +1 000 000 ₽.</p>
+                    <div class="donate-price">100 000 ₽</div>
+                    <button class="btn-donate" onclick="buyDonateItem(this, 'Пакет Миллионер', 100000)">Купить</button>
+                </div>
+
+                <div class="donate-card">
+                    <div class="donate-badge family">Семья</div>
+                    <div class="donate-icon">⚔️</div>
+                    <h3>Создание Семьи</h3>
+                    <p>Разрешение на создание собственного клана, автопарка и штаб-квартиры.</p>
+                    <div class="donate-price">500 000 ₽</div>
+                    <button class="btn-donate" onclick="buyDonateItem(this, 'Создание Семьи', 500000)">Купить</button>
+                </div>
+
+                <div class="donate-card">
+                    <div class="donate-badge number">Номера</div>
+                    <div class="donate-icon">🔢</div>
+                    <h3>Номера «A777AA»</h3>
+                    <p>Уникальный гос. номер для вашего автомобиля высшей категории.</p>
+                    <div class="donate-price">30 000 ₽</div>
+                    <button class="btn-donate" onclick="buyDonateItem(this, 'Номера A777AA', 30000)">Купить</button>
+                </div>
+
+                <div class="donate-card">
+                    <div class="donate-badge skin">Скин</div>
+                    <div class="donate-icon">👔</div>
+                    <h3>Скин «Босс»</h3>
+                    <p>Уникальный деловой костюм с выделяющимся внешним видом.</p>
+                    <div class="donate-price">15 000 ₽</div>
+                    <button class="btn-donate" onclick="buyDonateItem(this, 'Скин Босса', 15000)">Купить</button>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- 4. ОСОБЕННОСТИ -->
+    <div id="page-features" class="tab-page">
+        <section class="features">
+            <h2>Ключевые фичи R-RP</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="icon">🏛️</div>
+                    <h3>Арзамас и Лыткарино</h3>
+                    <p>Проработанная дорожная сеть, парковки, жилые секторы и реалистичные перекрестки.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">💳</div>
+                    <h3>Банкоматы R-BANK 24/7</h3>
+                    <p>Уникальная банковская система с картами, наличкой и авто-закрытием интерфейса.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🏠</div>
+                    <h3>Система Домов</h3>
+                    <p>Собственные квартиры и дома от 40 000 ₽ с сохранением владельцев на сервере.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🧹</div>
+                    <h3>Первые Работы</h3>
+                    <p>Зарабатывай первые деньги на уборке улиц или создавай свои гос. структуры.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 5. АДМИН ПАНЕЛЬ (Danik) -->
+    <div id="page-admin" class="tab-page">
+        <section class="admin-section">
+            <h2>⚙️ Панель Управления Разработчика</h2>
+            <p>Управление пользователями и сайтом проекта R-RP.</p>
+            
+            <div class="admin-stats-box">
+                <span>Зарегистрированных аккаунтов на сайте: <b id="adminTotalUsers">0</b></span>
+            </div>
+
+            <div id="adminUsersList" class="messages-list"></div>
+        </section>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО СОЗДАНИЯ ТЕМЫ -->
+    <div id="newTopicModal" class="modal">
+        <div class="modal-content modal-large">
+            <span id="closeTopicModal" class="close-btn">&times;</span>
+            <h3>Создать новую тему на Форуме</h3>
+            
+            <form id="newTopicForm" class="auth-form">
+                <input type="text" id="topicTitle" placeholder="Заголовок темы..." required>
+                <select id="topicCategory" required>
+                    <option value="📢 Новости">📢 Новости</option>
+                    <option value="💬 Общение" selected>💬 Общение</option>
+                    <option value="🚗 Фракции">🚗 Фракции</option>
+                    <option value="🛠 Жалобы и Баги">🛠 Жалобы и Баги</option>
+                </select>
+                <textarea id="topicContent" rows="6" placeholder="Текст темы..." required></textarea>
+                <button type="submit" class="btn-primary-glow">Опубликовать тему</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО ПРОСМОТРА ТЕМЫ -->
+    <div id="viewTopicModal" class="modal">
+        <div class="modal-content modal-large">
+            <span id="closeViewTopicModal" class="close-btn">&times;</span>
+            <div id="viewTopicContent"></div>
+            
+            <div class="comments-block">
+                <h4>Комментарии (<span id="commentsCount">0</span>):</h4>
+                <div id="commentsList" class="comments-list"></div>
+
+                <form id="addCommentForm" class="add-comment-form">
+                    <input type="text" id="commentText" placeholder="Написать ответ..." required>
+                    <button type="submit" class="btn-primary-glow">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО АВТОРИЗАЦИИ -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span id="closeAuthModal" class="close-btn">&times;</span>
+            <div class="auth-tabs">
+                <button id="tabLogin" class="tab-btn active">Вход</button>
+                <button id="tabRegister" class="tab-btn">Регистрация</button>
+            </div>
+
+            <form id="loginForm" class="auth-form">
+                <h3>Авторизация</h3>
+                <input type="text" id="loginUser" placeholder="Никнейм" required>
+                <input type="password" id="loginPass" placeholder="Пароль" required>
+                <button type="submit" class="btn-primary-glow">Войти</button>
+            </form>
+
+            <form id="registerForm" class="auth-form hidden">
+                <h3>Создать аккаунт</h3>
+                <input type="text" id="regUser" placeholder="Желаемый Никнейм" required>
+                <input type="password" id="regPass" placeholder="Пароль" required>
+                <button type="submit" class="btn-primary-glow">Зарегистрироваться</button>
+            </form>
+            
+            <div id="authAlert" class="auth-alert hidden"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 R-RP Roblox Project • <a href="https://t.me/radmirrproblix" target="_blank">t.me/radmirrproblix</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
